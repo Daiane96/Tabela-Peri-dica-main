@@ -1,0 +1,86 @@
+{% extends "template1.html" %} {% block conteudo %}
+<!-- CSS only -->
+<link href="/static/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/static/style.css" rel="stylesheet" />
+
+
+<div id="desafio1">
+  <div>
+    {% for desafio in desafios %}
+      {% for pergunta in perguntas %}
+        {% if pergunta._desafio_id == desafio._id %}
+          {% if pergunta._id != pergunta._id %}
+            <h2>{{desafio._id}}</h2>
+            <h3>{{pergunta._nome_pergunta}}</h3>
+            <p>{{pergunta._descricao}}</p>
+            <button
+            class="btn_resposta"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseRespostaFacil"
+            aria-expanded="false"
+            aria-controls="collapseRespostaFacil">Resposta
+          <div class="collapse" id="collapseRespostaFacil">
+            <div class="card card-body">
+              <p>Resposta: {{pergunta._resposta}}</p>
+            </div>
+          </div>
+        </button>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+  <div class="desafio2">
+    {% for desafio in desafios %}
+      {% for pergunta in perguntas %}
+        {% if pergunta._desafio_id == desafio._id %}
+          <h2>{{desafio._id}}</h2>
+          <h3>{{pergunta._nome_pergunta}}</h3>
+          <p>{{pergunta._descricao}}</p>
+          <button
+          class="btn_resposta"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapseRespostaMedio"
+          aria-expanded="false"
+          aria-controls="collapseRespostaMedio">Resposta
+        <div class="collapse" id="collapseRespostaMedio">
+          <div class="card card-body">
+            <p>Resposta: {{pergunta._resposta}}</p>
+          </div>
+        </div>
+      </button>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+  <div class="desafio3">
+    {% for desafio in desafios %}
+      {% for pergunta in perguntas %}
+        {% if pergunta._desafio_id == desafio._id %}
+          <h2>{{desafio._id}}</h2>
+          <h3>{{pergunta._nome_pergunta}}</h3>
+          <p>{{pergunta._descricao}}</p>
+          <button
+            class="btn_resposta"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseRespostaDificil"
+            aria-expanded="false"
+            aria-controls="collapseRespostaDificil">Resposta
+          <div class="collapse" id="collapseRespostaDificil">
+            <div class="card card-body">
+              <p>Resposta: {{pergunta._resposta}}</p>
+            </div>
+          </div>
+        </button>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

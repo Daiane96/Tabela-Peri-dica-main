@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+     <div class="jumbotron">
+        <h1 class="display-4">
+            {{ title }}</h1>
+     </div>
+      </br>
+      <form action="/atualizar_classe" method="post">
+        <fieldset>
+        <legend>Atualizando classe</legend>
+          <input type="hidden" name="id" value="{{classe._id}}">
+          <div class="form-group">
+            <label for="nome_classe">Nome da classe:</label>
+            <input type="text" id="nome_classe" name="nome_classe" class="form-control" value="{{classe._nome_classe}}">
+          </div>
+          
+          </br>
+          <button type="submit" class="elemento">Salvar</button>
+          <a class="voltar" href="{{url_for('lista_classes')}}">Voltar </a>
+        </fieldset>
+      </form>
+{% endblock %}

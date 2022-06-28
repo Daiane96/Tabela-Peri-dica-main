@@ -1,0 +1,27 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+      <div class="jumbotron">
+             <h1 class="display-4">
+                {{ title }}</h1>
+        </div>
+      <form action="/criar_desafio" method="post">
+        <fieldset>
+          <legend>Novo desafio</legend>
+          <div class="form-group">
+            <label for="quantidade_perguntas">Quantidade de perguntas:</label>
+            <input type="text" id="quantidade_perguntas" name="quantidade_perguntas" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="nivel_id">Nível:</label>
+            <select class="form-select" id="nivel_id" name="nivel_id">
+            {% for nivel in niveis %}
+                <option value="{{nivel._id}}">{{nivel._nome_nivel}}</option>
+            {% endfor %}
+            </select>
+          </div>
+          <button class="elemento" type="submit">Salvar</button>
+          <a class="voltar" href="{{url_for('lista_desafios')}}">Voltar </a>
+        </fieldset>
+      </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <div class="jumbotron">
+        <h1 class="display-4">
+            {{ title }}
+            <!--<img src="{{url_for('static', filename='banho.jpg')}}" width="250" height="250" class="rounded mx-auto d-block" alt="Imagem responsiva">-->
+            </h1>
+     </div>
+
+        </br>
+        <a class="elemento" href="{{url_for('nova_curiosidade')}}">Nova Curiosidade</a>
+        </br>
+        </br>
+    </br>
+</br>
+    <div class="table">
+        <table class="tabela">
+            <thead class="tabela" bgcolor="#32b08d">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                    <th>Elemento</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead bgcolor= "#FFFAFA">
+            <tbody>
+            {% for curiosidade in curiosidades %}
+                <tr>
+                    <td>{{ curiosidade._tipo }}</td>
+                    <td>{{ curiosidade._descricao }}</td>
+                    <td>{{ curiosidade._nome_elemento }}</td>
+                    <td><a class="btn btn-secondary" href="{{url_for('editar_curiosidades', id=curiosidade._id)}}">Editar</a> </td>
+                    <td><a class="btn btn-danger" href="{{url_for('deletar_curiosidades', id=curiosidade._id)}}">Deletar</a> </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

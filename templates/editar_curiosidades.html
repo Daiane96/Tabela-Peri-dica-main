@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+     <div class="jumbotron">
+        <h1 class="display-4">
+            {{ title }}</h1>
+     </div>
+      </br>
+      <form action="/atualizar_curiosidades" method="post">
+        <fieldset>
+        <legend>Atualizando curiosidades</legend>
+          <input type="hidden" name="id" value="{{curiosidade._id}}">
+          <div class="form-group">
+            <label for="tipo">Tipo de curiosidade:</label>
+            <input type="text" id="tipo" name="tipo" class="form-control" value="{{curiosidade._tipo}}">
+          </div>
+          <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" class="curiosidade" value="{{curiosidade._descricao}}">
+          </div>
+          <div class="form-group">
+            <label for="elemento">Elemento:</label>
+            <select class="form-select" id="elemento" name="elemento">
+            {% for elemento in elementos %}
+              {% if curiosidade._elemento_id == elemento._id %}
+                <option value="{{elemento._id}}" selected>{{elemento._nome_elemento}}</option>
+              {% else %}
+                <option value="{{elemento._id}}">{{elemento._nome_elemento}}</option>
+              {% endif %}
+            {% endfor %}
+            </select>
+          </div>
+          </br>
+          <button type="submit" class="elemento">Salvar</button>
+          <a class="voltar" href="{{url_for('lista_curiosidades')}}">Voltar </a>
+        </fieldset>
+      </form>
+{% endblock %}

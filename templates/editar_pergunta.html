@@ -1,0 +1,42 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+     <div class="jumbotron">
+        <h1 class="display-4">
+            {{ title }}</h1>
+     </div>
+      </br>
+      <form action="/atualizar_pergunta" method="post">
+        <fieldset>
+        <legend>Atualizando perguntas</legend>
+          <input type="hidden" name="id" value="{{pergunta._id}}">
+          <div class="form-group">
+            <label for="nome_pergunta">Nome da pergunta:</label>
+            <input type="text" id="nome_pergunta" name="nome_pergunta" class="form-control" value="{{pergunta._nome_pergunta}}">
+          </div>
+          <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" class="form-control" value="{{pergunta._descricao}}">
+          </div>
+          <div class="form-group">
+            <label for="resposta">Resposta:</label>
+            <input type="text" id="resposta" name="resposta" class="form-control" value="{{pergunta._resposta}}">
+          </div>
+          <div class="form-group">
+            <label for="desafio_id">Desafio:</label>
+            <select class="form-select" id="desafio_id" name="desafio_id">
+            {% for desafio in desafios %}
+              {% if desafio._desafio_id == desafio._id %}
+                <option value="{{desafio._id}}" selected>{{desafio._id}}</option>
+              {% else %}
+                <option value="{{desafio._id}}">{{desafio._id}}</option>
+              {% endif %}
+            {% endfor %}
+            </select>
+          </div>
+          </br>
+          <button type="submit" class="elemento">Salvar</button>
+          <a class="voltar" href="{{url_for('lista_perguntas')}}">Voltar </a>
+        </fieldset>
+      </form>
+{% endblock %}

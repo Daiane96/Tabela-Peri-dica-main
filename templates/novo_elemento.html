@@ -1,0 +1,47 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+      <div class="jumbotron">
+             <h1 class="display-4">
+                {{ title }}</h1>
+        </div>
+      <form action="/criar_elemento" method="post">
+        <fieldset>
+          <legend>Novo elemento</legend>
+          <div class="form-group">
+            <label for="nome_elemento">Nome do elemento:</label>
+            <input type="text" id="nome_elemento" name="nome_elemento" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="num_atomico">Número Atômico:</label>
+            <input type="text" id="num_atomico" name="num_atomico" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="massa_atomica">Massa atômica:</label>
+            <input type="text" id="massa_atomica" name="massa_atomica" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="estado_fisico">Estado físico:</label>
+            <input type="text" id="estado_fisico" name="estado_fisico" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="simbolo">Símbolo:</label>
+            <input type="text" id="simbolo" name="simbolo" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="distribuicao_eletronica">Distribuição eletrônica:</label>
+            <input type="text" id="distribuicao_eletronica" name="distribuicao_eletronica" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="classe">Classe:</label>
+            <select class="form-select" id="classe" name="classe">
+            {% for classe in classes %}
+                <option value="{{classe._id}}">{{classe._nome_classe}}</option>
+            {% endfor %}
+            </select>
+          </div>
+          <button class="elemento" type="submit">Salvar</button>
+          <a class="voltar" href="{{url_for('lista_elementos')}}">Voltar </a>
+        </fieldset>
+      </form>
+{% endblock %}

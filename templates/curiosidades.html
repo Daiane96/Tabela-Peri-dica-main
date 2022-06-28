@@ -1,0 +1,37 @@
+{% extends "template1.html" %} {% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+<link href="https://css.gg/file-document.css" rel="stylesheet" />
+
+<div id="grid-container-curiosidade">
+  {% for curiosidade in curiosidades %} {% for elemento in elementos %} {% if
+  elemento._id == curiosidade._elemento_id %}
+  <section class="sectioncuriosidade">
+    <span>{{elemento._num_atomico}}</span>
+    <h2>{{ elemento._simbolo }}</h2>
+    <p>{{ elemento._nome_elemento }}</p>
+    <p>{{elemento._massa_atomica}}</p>
+    <p>{{elemento._distribuicao_eletronica}}</p>
+    <p>{{elemento._estado_fisico}}</p>
+  </section>
+  <br>
+  <br>
+  <div class="tabela_curiosidade">
+    <table class="tabela">
+        <thead class="tabela" bgcolor="#32b08d">
+            <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+            </tr>
+        </thead bgcolor= "#FFFAFA">
+        <tbody>
+        
+            <tr>
+                <td>{{ curiosidade._tipo }}</td>
+                <td>{{ curiosidade._descricao }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+  {% endif %} {% endfor %} {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+      <div class="jumbotron">
+             <h1 class="display-4">
+                {{ title }}</h1>
+        </div>
+      <form action="/criar_classe" method="post">
+        <fieldset>
+          <legend>Nova classe</legend>
+          <div class="form-group">
+            <label for="nome_classe">Nome da classe:</label>
+            <input type="text" id="nome_classe" name="nome_classe" class="form-control">
+          </div>
+          
+          <button class="elemento" type="submit">Salvar</button>
+          <a class="voltar" href="{{url_for('lista_classes')}}">Voltar </a>
+        </fieldset>
+      </form>
+{% endblock %}

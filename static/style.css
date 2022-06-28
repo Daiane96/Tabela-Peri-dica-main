@@ -1,0 +1,7808 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,700');
+
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-preto: rgb(0, 0, 0);
+  --nao-metal: rgb(180, 210, 100);
+  --gas-nobre: rgb(100, 180, 225);
+  --metal-alcalino: rgb(245, 200, 100);
+  --metal-alcalino-terroso: rgb(240, 230, 90);
+  --semimetal: rgb(110, 200, 190);
+  --halogenio: rgb(170, 225, 255);
+  --outros-metais: rgb(190, 210, 210);
+  --metal-transicao: rgb(245, 175, 175);
+  --lantanideo: rgb(150, 225, 225);
+  --actinidio: rgb(230, 190, 220);
+  --dificuldade-facil: rgb(0, 255, 0);
+}
+
+/* quando for maior que 1024px ele aplica essas fig para deixar responsivo*/
+/*=== GERAL =================================*/
+body {
+  overflow: auto;
+}
+
+html {
+  /* chrome://flags/#smooth-scrolling */
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font: 1em/1 'Montserrat', sans-serif;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  padding: 0.5em; /*5%;*/
+  /* padding: 0.2rem 2%; */
+  background: var(--bg-preto);
+  overflow: overlay;
+}
+
+ul .intro_li a {
+  display: block;
+  list-style-type: none;
+}
+
+.elemento {
+  border-radius: 100rem;
+  padding: 1em;
+  font-size: 1.2rem;
+  padding: 0.5rem 3rem;
+  color: hsl(0, 0%, 33%);
+  text-decoration: none;
+  border: solid 0.3rem transparent;
+  border-radius: 0.4rem;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, hsl(192, 100%, 74%), hsl(163, 56%, 44%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0.2rem 100rem 0.1rem
+    linear-gradient(101deg, hsl(192, 100%, 74%), hsl(163, 56%, 44%)) inset;
+}
+
+.elemento:hover {
+  box-shadow: none;
+  color: white;
+}
+.table {
+  display: flex;
+  justify-content: center;
+}
+.tabela_curiosidade {
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+#grid-container-curiosidade {
+  display: grid;
+  /* row-gap: 50px; */
+  grid-template-areas:
+    'tabela_curiosidade tabela_curiosidade tabela_curiosidade'
+    'sectioncuriosidade sectioncuriosidade sectioncuriosidade';
+  align-content: stretch;
+  justify-content: center;
+  align-items: baseline;
+  justify-items: center;
+  /* grid-template-columns: auto auto auto; */
+  /* grid-template-columns: repeat(3, 5%); */
+  /* grid-gap: 0.25em;
+  justify-content: space-around;
+  align-items: end;
+  justify-items: center; */
+}
+section.sectioncuriosidade {
+  height: 10em;
+  width: 10em;
+  background: var(--bg-preto);
+  border: 0.125rem solid;
+  border-radius: 0.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tabela,
+.tabela thead {
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 1rem;
+  border-radius: 1.9rem;
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+}
+.tabela th,
+.tabela td {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 5px 10px;
+  text-align: center;
+}
+/* FOREGROUND COLOR VARIABLES */
+#dificuldade-facil {
+  color: var(--dificuldade-facil);
+}
+
+#dificuldade-facil {
+  height: 6em;
+  background: var(--bg-preto);
+  border: 0.125rem solid;
+  border-radius: 0.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nao-metal {
+  color: var(--nao-metal);
+}
+
+.gas-nobre {
+  color: var(--gas-nobre);
+}
+
+.metal-alcalino {
+  color: var(--metal-alcalino);
+}
+
+.metal-alcalino-terroso {
+  color: var(--metal-alcalino-terroso);
+}
+
+.semimetal {
+  color: var(--semimetal);
+}
+
+.halogenio {
+  color: var(--halogenio);
+}
+
+.outros-metais {
+  color: var(--outros-metais);
+}
+
+.metal-transicao {
+  color: var(--metal-transicao);
+}
+
+.lantanideo {
+  color: var(--lantanideo);
+}
+
+.actinidio {
+  color: var(--actinidio);
+}
+
+/* TYPOGRAPHY STYLES */
+h1 {
+  margin: 0.5em 0;
+  font-size: calc(3vw + 2rem);
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p:last-child {
+  font-size: 0.8em;
+}
+
+/* GRID CONTAINER STYLES */
+main {
+  margin: auto;
+  max-width: 45em;
+  display: flex;
+}
+
+#grid-container {
+  flex-grow: 1;
+  min-width: 7em;
+}
+
+.col-hidden {
+  display: none;
+}
+
+/* GRID CELL */
+section {
+  height: 7em;
+  background: var(--bg-preto);
+  border: 0.125rem solid;
+  border-radius: 0.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.index {
+  height: 7em;
+  background: var(--bg-preto);
+  border: 0.125rem solid;
+  border-radius: 0.25rem;
+  margin-bottom: 0.4em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+span {
+  font-size: 0.75em;
+  position: absolute;
+  top: 0.3em;
+  left: 0.5em;
+}
+
+/* FOOTER */
+footer {
+  font-size: 0.8em;
+  text-align: left;
+  flex-basis: 13.5rem;
+  margin: -0.25em 0 0 1em;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 1em;
+}
+
+li {
+  flex-basis: 100%;
+  line-height: 1.25;
+  margin-bottom: 1em;
+}
+
+li:before {
+  content: ' ';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 0.125em solid;
+  border-radius: 0.125rem;
+  margin-right: 0.5em;
+  position: relative;
+  top: 0.25em;
+}
+
+.cabecalho_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.cabecalho-imagem {
+  left: 23px;
+  top: 0px;
+}
+
+.cabecalho-menu {
+  display: flex;
+  gap: 32px;
+}
+
+.cabecalho-menu-item {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff2e7;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.cabecalho-menu-item:hover {
+  box-shadow: none;
+  color: rgb(117, 218, 201);
+}
+
+.cabecalho:before {
+  border: none;
+  border-radius: none;
+}
+
+/* @media only screen and (min-width: 92.5em) { */
+@media only screen and (min-width: 45.5rem) {
+  @supports (display: grid) {
+    /* GLOBAL STYLES */
+
+    section p {
+      font-size: 0.65rem;
+    }
+
+    /* GRID CONTAINER STYLES */
+
+    main {
+      max-width: 130.5em;
+      display: block;
+    }
+
+    #grid-container {
+      display: grid;
+      grid-template-columns: repeat(18, 5%);
+      grid-gap: 0.25em;
+      justify-content: center;
+    }
+
+    .col-span16 {
+      grid-column: span 16;
+    }
+
+    .col-span10 {
+      grid-column: span 10;
+    }
+
+    .col-span3 {
+      grid-column: span 3;
+    }
+
+    .col-hidden {
+      display: block;
+      visibility: hidden;
+    }
+
+    /* GRID CELL */
+
+    section {
+      margin: 0;
+    }
+
+    section:hover {
+      transition: 0.2s;
+      transform: scale(1.5);
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    #dificuldade-facil:hover {
+      transition: 0.1s;
+      transform: scale(1.5);
+      cursor: initial;
+      z-index: 2;
+    }
+
+    ul {
+      justify-content: center;
+    }
+
+    li {
+      flex-basis: auto;
+      margin-bottom: 0;
+    }
+
+    li + li {
+      margin-left: 2em;
+    }
+  }
+}
+
+@media only screen and (min-width:102.5em){
+	/* GLOBAL STYLES */
+		body{
+			font-size:.75em;	
+		}	
+}
+
+
+.linha {
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 11.8rem) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.icon {
+  display: inline-block;
+  font-size: 4.4rem;
+  animation: float 5s ease-in-out infinite;
+}
+
+.ri-facebook-circle-line {
+  animation-delay: 1s;
+  color: hsl(221, 44%, 41%);
+}
+
+.ri-whatsapp-line {
+  animation-delay: 2s;
+  color: hsl(113, 67%, 41%);
+}
+
+.ri-instagram-line {
+  color: hsl(336, 71%, 47%);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.icons-wrapper {
+  text-align: center;
+  padding-top: 2.5rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+fieldset {
+  display: block;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 0.2rem groove (internal value);
+}
+
+legend {
+  font-size: 1rem;
+  text-align: left;
+  background-color: #78e4ff;
+  color: white;
+  padding: 0.5rem 1rem;
+  color: black;
+}
+
+label {
+  font-size: 1rem;
+  margin: auto;
+}
+
+input,
+select {
+  margin: 0.5rem;
+  font: 1em/1 'Montserrat', sans-serif;
+}
+
+textarea {
+  margin-top: 0.7rem;
+  letter-spacing: 1px;
+  font: 1em/1 'Montserrat', sans-serif;
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+.voltar {
+  border-radius: 100rem;
+  padding: 1em;
+  font-size: 1.2rem;
+  padding: 0.5rem 3rem;
+  color: #555555;
+  text-decoration: none;
+  border: solid 0.3rem transparent;
+  border-radius: 0.4rem;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, #78e4ff, #32b08d);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0.2rem 100rem 0.1rem linear-gradient(101deg, #78e4ff, #32b08d)
+    inset;
+}
+
+.voltar:hover {
+  box-shadow: none;
+  color: white;
+}
+
+.page-header {
+  border-top: 1px solid #2b3235;
+  /* /* border-top: 0.2px solid #FFF2E7; */
+}
+
+.curiosidade {
+  margin: 0;
+}
+
+.facil {
+  align-items: flex-end;
+}
+
+.card {
+  background-image: linear-gradient(to right, #32b08d, #78e4ff);
+  color: #2b3235;
+  font-size: 1.2rem;
+}
+
+.btn {
+  margin: 0;
+  padding: 0;
+}
+
+.btn_resposta{
+  /* height: 76px;
+  width: 200px; */
+  align-items: center;
+  background-image: linear-gradient(rgba(20, 163, 163, 0.267), rgba(179, 52, 52, 0.133));
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+
+}
+
+main.pagedesafios{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  padding: 2%;
+  gap: 0.5rem;
+  font-size: 1.0rem;
+  
+}
+
+main.pagedesafios h2{
+  color:#59b99e;
+  font-size: 1.4rem;
+}
+
+main.pagedesafios h3{
+  font-size: 1.2rem;
+}
+/* MODAL */
+
+.title {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+img{
+	position: relative;
+	bottom: 50px;
+}
+
+/* Modal do Hélio */
+.title2 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn2 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text2 {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal2{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content2{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn2{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn2:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Lítio */
+.title3 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn3 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text3 {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal3{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content3{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn3{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn3:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Berílio */
+.title4 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn4 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text4 {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal4{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content4{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn4{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn4:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Boro */
+.title5 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn5 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text5 {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal5{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content5{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn5{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn5:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Carbono */
+.title6 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn6 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text6 {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal6{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content6{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn6{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn6:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Nitrogênio */
+.title7 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn7 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text7 {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal7{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content7{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn7{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn7:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Oxigênio */
+.title8 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn8 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text8 {
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal8{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content8{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn8{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn8:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Flúor */
+.title9 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn9 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text9{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal9{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content9{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn9{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn9:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Neônio */
+.title10 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn10 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text10{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal10{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content10{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn10{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn10:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Sódio */
+.title11 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn11 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text11{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal11{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content11{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn11{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn11:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+
+/* Modal do Magnésio */
+.title12 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn12 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text12{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal12{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content12{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn12{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn12:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Alumínio */
+.title13 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn13 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text13{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal13{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content13{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn13{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn13:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Silício */
+.title14 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn14 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text14{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal14{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content14{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn14{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn14:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Fósforo */
+.title15 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn15 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text15{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal15{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content15{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn15{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn15:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Enxofre */
+.title16 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn16 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text16{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal16{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content16{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn16{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn16:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Cloro */
+.title17 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn17 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text17{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal17{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content17{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn17{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn17:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Argônio */
+.title18 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn18 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text18{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal18{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content18{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn18{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn18:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Potássio */
+.title19 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn19 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text19{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal19{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content19{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn19{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn19:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+
+/* Modal do Cálcio */
+.title20 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn20 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text20{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal20{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content20{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn20{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn20:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Escândio */
+.title21 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn21 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text21{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal21{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content21{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn21{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn21:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Titânio */
+.title22 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn22 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text22{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal22{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content22{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn22{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn22:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Vanádio */
+.title23 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn23 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text23{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal23{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content23{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn23{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn23:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Crômio */
+.title24 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn24 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text24{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal24{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content24{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn24{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn24:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Manganês */
+.title25 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn25 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text25{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal25{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content25{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn25{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn25:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Ferro */
+.title26 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn26 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text26{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal26{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content26{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn26{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn26:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Cobalto */
+.title27 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn27 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text27{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal27{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content27{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn27{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn27:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Níquel */
+.title28 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn28 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text28{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal28{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content28{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn28{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn28:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Cobre */
+.title29 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn29 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text29{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal29{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content29{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn29{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn29:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Zinco */
+.title30 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn30 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text30{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal30{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content30{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn30{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn30:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+/* Modal do Gálio */
+.title31 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn31 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text31{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal31{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content31{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn31{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn31:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Germânio */
+.title32 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn32 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text32{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal32{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content32{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn32{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn32:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Arsênio */
+.title33 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn33 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text33{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal33{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal2.content33{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn33{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn33:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Selênio */
+.title34 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn34 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text34{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal34{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content34{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn34{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn34:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Bromo */
+.title35 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn35 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text35{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal35{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content35{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn35{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn35:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Criptônio */
+.title36 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn36 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text36{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal36{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content36{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn36{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn36:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Rubídio */
+.title37 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn37 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text37{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal37{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content37{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn37{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn37:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Estrôncio */
+.title38 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn38 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text38{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal38{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content38{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn38{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn38:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Ítrio */
+.title39 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn39 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text39{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal39{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content39{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn39{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn39:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Zirconio */
+.title40 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn40 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text40{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal40{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content40{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn40{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn40:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Nióbio */
+.title41 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn41 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text41{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal41{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content41{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn41{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn41:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Molibdênio */
+.title42 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn42 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text42{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal42{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content42{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.btn42{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn42:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Tecnécio */
+.title43 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn43 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text43{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal43{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content43{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn43{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn43:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Rutênio */
+.title44 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn44 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text44{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal44{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content44{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn44{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn44:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Ródio */
+.title45 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn45 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text45{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal45{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content45{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn45{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn45:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Paládio */
+.title46 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn46 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text46{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal46{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content46{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn46{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn46:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Prata */
+.title47 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn47 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text47{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal47{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content47{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.btn47{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn47:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+
+/* Modal do Cadmio */
+.title48 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn48 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text48{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal48{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content48{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn48{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn48:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Índio */
+.title49 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn49 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text49{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal49{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content49{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn49{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn49:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Estanho */
+.title50 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn50 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text50{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal50{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content50{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn50{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn50:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Antimônio */
+.title51 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn51 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text51{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal51{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content51{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn51{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn51:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Telúrio */
+.title52 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn52 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text52{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal52{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content52{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn52{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn52:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Iodo */
+.title53 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn53 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text53{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal53{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content53{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn53{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn53:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Xenônio */
+.title54 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn54 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text54{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal54{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content54{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn54{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn54:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Césio */
+.title55 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn55 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text55{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold
+}
+
+.modal55{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content55{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn55{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn55:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Bário */
+.title56 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn56 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text56{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal56{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.btn56{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn56:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+.modal.content56{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Modal do Lantânio */
+.title57 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn57 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text57{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal57{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content57{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn57{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn57:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Cério */
+.title58 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn58 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text58{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal58{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content58{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn58{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn58:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+
+/* Modal do Praseodímio */
+.title59 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn59 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text59{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal59{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content59{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn59{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn59:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Neodimio */
+.title60 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn60 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text60{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal60{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content60{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn60{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn60:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Promécio */
+.title61 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn61 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text61{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal61{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content61{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn61{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn61:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Smamário */
+.title62 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn62 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text62{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal62{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content62{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn62{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn62:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Európio */
+.title63 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn63 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text63{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal63{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content63{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn63{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn63:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Gadolínio */
+.title64 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn64 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text64{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal64{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content64{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn64{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn64:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Térbio */
+.title65 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn65 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text65{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal65{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content65{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn65{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn65:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Disprósio */
+.title66 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn66 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text66{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal66{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content66{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn66{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn66:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Hólmio */
+.title67 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn67 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text67{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal67{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content67{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn67{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn67:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Érbio */
+.title68 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn68 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text68{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal68{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content68{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn68{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn68:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Túlio */
+.title69 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn69 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text69{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal69{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content69{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn69{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn69:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Itérbio */
+.title70 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn70 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text70{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal70{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content70{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn70{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn70:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Lutécio */
+.title71 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn71 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text71{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal71{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content71{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn71{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn71:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Fáfnio */
+.title72 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn72 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text72{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal72{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content72{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn72{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn72:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Tântalo */
+.title73 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn73 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text73{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal73{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content73{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn73{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn73:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Tungstênio */
+.title74 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn74 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text74{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal74{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content74{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn74{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn74:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Rênio */
+.title75 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn75 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text75{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal75{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content75{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn75{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn75:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Ósmio */
+.title76 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn76 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text76{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal76{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content76{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn76{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn76:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Irídio */
+.title77 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn77 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text77{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal77{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content77{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn77{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn77:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Platina */
+.title78 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn78 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text78{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal78{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content78{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn78{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn78:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Ouro */
+.title79 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn79 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text79{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal79{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content79{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn79{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn79:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Mercúrio */
+.title80 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn80 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text80{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal80{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content80{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn80{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn80:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Tálio */
+.title81 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn81 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text81{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal81{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content81{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn81{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn81:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Chumbo */
+.title82 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn82 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text82{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal82{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content82{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn82{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn82:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Bismuto */
+.title83 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn83 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text83{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal83{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content83{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn83{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn83:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Polônio */
+.title84 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn84 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text84{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal84{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content84{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn84{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn84:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Aslato */
+.title85 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn85 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text85{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal85{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content85{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn85{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn85:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Randônio */
+.title86 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn86 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text86{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal86{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content86{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn86{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn86:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Frâncio */
+.title87 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn87 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text87{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal87{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content87{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn87{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn87:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Rádio */
+.title88 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn88 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text88{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal88{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content88{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn88{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn88:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Actínio */
+.title89 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn89 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text89{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal89{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content89{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn89{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn89:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+
+/* Modal do Thório */
+.title90 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn90 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text90{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal90{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content90{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn90{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn90:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Protactínio */
+.title91 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn91 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text91{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal91{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content91{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn91{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn91:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Urânio */
+.title92 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn92 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text92{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal92{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content92{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn92{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn92:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Netúnio */
+.title93 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn93 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text93{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal93{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content93{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn93{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn93:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Plutônio */
+.title94 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn94 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text94{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal94{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content94{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn94{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn94:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Amerício */
+.title95 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn95 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text95{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal95{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content95{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn95{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn95:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Cúrio */
+.title96 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn96 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text96{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal96{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content96{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn96{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn96:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Berquélio */
+.title97 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn97 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text97{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal97{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content97{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn97{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn97:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Califórnio */
+.title98 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn98 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text98{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal98{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content98{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn98{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn98:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Einstênio */
+.title99 {
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn99 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text99{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal99{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content99{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn99{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn99:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Férmio */
+.title100{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn100 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text100{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal100{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content100{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn100{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn100:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Mendelévio */
+.title101{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn101 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text101{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal101{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content101{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn101{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn101:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Nobélio */
+.title102{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn102 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text102{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal102{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content102{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn102{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn102:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Laurêncio */
+.title103{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn103 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text103{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal103{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content103{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn103{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn103:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Rutherfórdio */
+.title104{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn104 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text104{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal104{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content104{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn104{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn104:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Dúbnio */
+.title105{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn105 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text105{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal105{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content105{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn105{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn105:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Seabórgio */
+.title106{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn106 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text106{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal106{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content106{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn106{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn106:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Bóhrio */
+.title107{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn107 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text107{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal107{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content107{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn107{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn107:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Hássio */
+.title108{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn108 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text108{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal108{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content108{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn108{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn108:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Meitnério */
+.title109{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn109 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text109{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal109{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content109{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn109{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn109:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Darmstádtio */
+.title110{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn110 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text110{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal110{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content110{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn110{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn110:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Roentgênio*/
+.title111{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn111 {
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text111{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal111{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content111{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn111{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn111:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Copernício */
+.title112{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn112{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text112{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal112{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content112{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn112{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn112:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do NIhónio */
+.title113{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn113{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text113{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal113{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content113{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.btn113{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn113:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Felóvio */
+.title114{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn114{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text114{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal114{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content114{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn114{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn114:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Moscóvio */
+.title115{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn115{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text115{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal115{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content115{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn115{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn115:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Livermório */
+.title116{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn116{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text116{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal116{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content116{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn116{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn116:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Tenessino */
+.title117{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn117{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text117{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal117{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content117{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn117{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn117:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
+
+/* Modal do Oganessónio */
+.title118{
+	color: white;
+	margin-bottom: 5%;
+}
+
+.modalBtn118{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: red;
+	margin-top: 5px;
+}
+
+.text118{
+	font-size: 2em;
+	position: relative;
+	bottom: 40px;
+	font-weight: bold;
+}
+
+.modal118{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal.content118{
+	background-color: #D3D3D3;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 5px;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn118{
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	bottom: 30px;
+}
+
+.btn118:hover{
+	transition:.2s;
+	transform:scale(1.5);
+}
